@@ -1,0 +1,41 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "Server for Music Book Club",
+  "main": "index.ts",
+  "repository": "https://github.com/poozipotti/Music_Book_Club",
+  "author": "George Beckert",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node dist/server",
+    "seed": "ts-node seedDB.ts",
+    "clean": "rm -rf dist",
+    "build": "yarn clean && yarn generate && tsc",
+    "introspect": "npx prisma introspect && yarn generate && tsc",
+    "generate": "yarn generate:prisma && yarn generate:nexus",
+    "generate:prisma": "prisma generate",
+    "generate:nexus": "ts-node --transpile-only src/schema",
+    "postinstall": "yarn generate",
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly src/server"
+  },
+  "dependencies": {
+    "@nexus/schema": "0.13.1",
+    "@prisma/client": "2.0.0-beta.2",
+    "@types/node-fetch": "2.5.5",
+    "apollo-server": "2.12.0",
+    "chalk": "^4.0.0",
+    "faker": "^4.1.0",
+    "graphql": "14.6.0",
+    "nexus-prisma": "0.12.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "2.0.0-beta.2",
+    "@types/faker": "^4.1.11",
+    "@types/node": "12.12.35",
+    "fake": "^0.2.2",
+    "ts-node": "8.8.2",
+    "ts-node-dev": "1.0.0-pre.44",
+    "typescript": "3.8.3"
+  }
+}
