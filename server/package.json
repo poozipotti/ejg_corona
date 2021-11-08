@@ -23,7 +23,7 @@
     "@nexus/schema": "0.13.1",
     "@prisma/client": "2.0.0-beta.2",
     "@types/node-fetch": "2.5.5",
-    "apollo-server": "2.12.0",
+    "apollo-server": "2.25.3",
     "chalk": "^4.0.0",
     "faker": "^4.1.0",
     "graphql": "14.6.0",
